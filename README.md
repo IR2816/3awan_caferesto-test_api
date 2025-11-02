@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# 3awan_caferesto-test_api
+=======
+>>>>>>> d6ae61f (Initial commit: API with CRUD functionality)
 # 3awan Cafe & Resto API
 
 Backend REST API untuk aplikasi pemesanan menu restoran.
@@ -54,3 +60,7 @@ API endpoints
 Notes
 - The project uses `sqlmodel`. Keep `.env` secret — it contains DB credentials.
 - For production, configure proper logging and disable debug/echo settings.
+<<<<<<< HEAD
+=======
+>>>>>>> bbd519c (Initial commit: API with CRUD functionality)
+>>>>>>> d6ae61f (Initial commit: API with CRUD functionality)

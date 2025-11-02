@@ -1,7 +1,7 @@
 import logging
 import os
 from dotenv import load_dotenv
-from sqlmodel import SQLModel, create_engine
+from sqlmodel import SQLModel, create_engine, Session
 
 # Load .env (if present) so DATABASE_URL can be read during local development
 load_dotenv()
@@ -48,3 +48,10 @@ def init_db():
     if engine is None:
         raise RuntimeError("Database engine is not configured. Set DATABASE_URL or call set_engine().")
     SQLModel.metadata.create_all(engine)
+
+
+def get_session():
+    if engine is None:
+        raise RuntimeError("Database engine is not configured. Set DATABASE_URL or call set_engine().")
+    with Session(engine) as session:
+        yield session
