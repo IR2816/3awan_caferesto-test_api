@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from ..models import Order
-from ..schemas import OrderCreate, OrderUpdate
-from ..crud import create_order, get_order, update_order, delete_order
+from app.models import Order
+from app.schemas import OrderCreate, OrderUpdate
+from app.crud import create_order, get_order, update_order, delete_order
 
 router = APIRouter()
 

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from typing import List
-from ..schemas import AddonCreate, AddonRead, AddonUpdate
-from ..crud import get_addons_by_menu, create_addon, get_addon, update_addon, delete_addon
+from app.schemas import AddonCreate, AddonRead, AddonUpdate
+from app.crud import get_addons_by_menu, create_addon, get_addon, update_addon, delete_addon
 
 router = APIRouter()
 

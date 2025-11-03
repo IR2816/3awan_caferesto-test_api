@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from typing import List
-from ..models import Category
-from ..schemas import CategoryUpdate
-from ..crud import get_categories, update_category, delete_category
+from app.models import Category
+from app.schemas import CategoryUpdate
+from app.crud import get_categories, update_category, delete_category
 
 router = APIRouter()
 

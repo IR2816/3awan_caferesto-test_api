@@ -1,10 +1,10 @@
 from fastapi import APIRouter, HTTPException, Depends
 from typing import List, Optional
 from sqlmodel import Session
-from ..database import get_session
-from ..models import Menu
-from ..schemas import MenuCreate, MenuUpdate
-from ..crud import get_menus, get_menu, create_menu, update_menu, delete_menu
+from app.database import get_session
+from app.models import Menu
+from app.schemas import MenuCreate, MenuUpdate
+from app.crud import get_menus, get_menu, create_menu, update_menu, delete_menu
 
 router = APIRouter()
 

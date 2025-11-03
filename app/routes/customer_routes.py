@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from typing import List
-from ..schemas import CustomerCreate, CustomerRead, CustomerUpdate
-from ..crud import create_customer, get_customers, get_customer, update_customer, delete_customer
+from app.schemas import CustomerCreate, CustomerRead, CustomerUpdate
+from app.crud import create_customer, get_customers, get_customer, update_customer, delete_customer
 
 router = APIRouter()
 

@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from ..schemas import PaymentCreate, PaymentRead, PaymentUpdate
-from ..crud import create_payment, get_payment, update_payment, delete_payment
+from app.schemas import PaymentCreate, PaymentRead, PaymentUpdate
+from app.crud import create_payment, get_payment, update_payment, delete_payment
 
 router = APIRouter()
 
