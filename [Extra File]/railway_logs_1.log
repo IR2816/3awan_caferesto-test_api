@@ -1,0 +1,1001 @@
+2025-11-03T08:24:00.938763891Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T08:24:00.938769960Z [err]      rv = self.invoke(ctx)
+2025-11-03T08:24:00.938774264Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T08:24:00.938778653Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T08:24:00.938783286Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:00.941457563Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T08:24:00.941462618Z [err]      server.run()
+2025-11-03T08:24:00.941467589Z [err]      ~~~~~~~~~~^^
+2025-11-03T08:24:00.941488804Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T08:24:00.941495493Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T08:24:00.941560536Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T08:24:00.941567868Z [err]      return runner.run(main)
+2025-11-03T08:24:00.941572577Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T08:24:00.941578043Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T08:24:00.941582445Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T08:24:00.941587978Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T08:24:00.941593298Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T08:24:00.941599188Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T08:24:00.941604647Z [err]      await self._serve(sockets)
+2025-11-03T08:24:00.941609165Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T08:24:00.941614674Z [err]      config.load()
+2025-11-03T08:24:00.941619152Z [err]      ~~~~~~~~~~~^^
+2025-11-03T08:24:00.941623099Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T08:24:00.941627390Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T08:24:00.941631448Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T08:24:00.941635605Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T08:24:00.943452607Z [err]      module = importlib.import_module(module_str)
+2025-11-03T08:24:00.943464675Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T08:24:00.943470935Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T08:24:00.943476277Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:00.943483743Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T08:24:00.943489657Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T08:24:00.943494655Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T08:24:00.943499152Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T08:24:00.943503662Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T08:24:00.943508513Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T08:24:00.943512676Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T08:24:00.943517136Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T08:24:00.943521796Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T08:24:00.943526389Z [err]      from ..database import get_session
+2025-11-03T08:24:00.943531481Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T08:24:04.011700544Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T08:24:04.011711736Z [err]  Traceback (most recent call last):
+2025-11-03T08:24:04.011715000Z [err]      run(
+2025-11-03T08:24:04.011723308Z [err]      ~~~^
+2025-11-03T08:24:04.011727186Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T08:24:04.011730317Z [err]          app,
+2025-11-03T08:24:04.011736872Z [err]      sys.exit(main())
+2025-11-03T08:24:04.011738973Z [err]          ^^^^
+2025-11-03T08:24:04.011745979Z [err]               ~~~~^^
+2025-11-03T08:24:04.011746869Z [err]      ...<46 lines>...
+2025-11-03T08:24:04.011753980Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T08:24:04.011755619Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T08:24:04.011761308Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:04.011768016Z [err]      )
+2025-11-03T08:24:04.011768583Z [err]      return self.main(*args, **kwargs)
+2025-11-03T08:24:04.011774415Z [err]      ^
+2025-11-03T08:24:04.011782750Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:04.011790887Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T08:24:04.011803519Z [err]      rv = self.invoke(ctx)
+2025-11-03T08:24:04.011810395Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T08:24:04.011816963Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T08:24:04.011826793Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:04.011836603Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T08:24:04.011844233Z [err]      return callback(*args, **kwargs)
+2025-11-03T08:24:04.015014274Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T08:24:04.015029959Z [err]      server.run()
+2025-11-03T08:24:04.015039939Z [err]      ~~~~~~~~~~^^
+2025-11-03T08:24:04.015051067Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T08:24:04.015061089Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T08:24:04.015071935Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T08:24:04.015079902Z [err]      return runner.run(main)
+2025-11-03T08:24:04.015087168Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T08:24:04.015095002Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T08:24:04.015103681Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T08:24:04.015112038Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T08:24:04.015121321Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T08:24:04.015128712Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T08:24:04.015136090Z [err]      await self._serve(sockets)
+2025-11-03T08:24:04.015143560Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T08:24:04.015151251Z [err]      config.load()
+2025-11-03T08:24:04.015159910Z [err]      ~~~~~~~~~~~^^
+2025-11-03T08:24:04.015169080Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T08:24:04.015176061Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T08:24:04.015182142Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T08:24:04.015188201Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T08:24:04.017432672Z [err]      from ..database import get_session
+2025-11-03T08:24:04.017445349Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T08:24:04.017453501Z [err]      module = importlib.import_module(module_str)
+2025-11-03T08:24:04.017464546Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T08:24:04.018108291Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T08:24:04.018120184Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:04.018129719Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T08:24:04.018136044Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T08:24:04.018148287Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T08:24:04.018154388Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T08:24:04.018160838Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T08:24:04.018166276Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T08:24:04.018173860Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T08:24:04.018179146Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T08:24:04.018328367Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T08:24:07.135966779Z [err]  Traceback (most recent call last):
+2025-11-03T08:24:07.135973801Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T08:24:07.135978738Z [err]      sys.exit(main())
+2025-11-03T08:24:07.135983182Z [err]               ~~~~^^
+2025-11-03T08:24:07.135988896Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T08:24:07.135993474Z [err]      return self.main(*args, **kwargs)
+2025-11-03T08:24:07.135997829Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:07.136001806Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T08:24:07.136006088Z [err]      rv = self.invoke(ctx)
+2025-11-03T08:24:07.136010508Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T08:24:07.136015122Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T08:24:07.136019484Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:07.136024872Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T08:24:07.136029151Z [err]      return callback(*args, **kwargs)
+2025-11-03T08:24:07.136033829Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T08:24:07.136038676Z [err]      run(
+2025-11-03T08:24:07.136042610Z [err]      ~~~^
+2025-11-03T08:24:07.136047055Z [err]          app,
+2025-11-03T08:24:07.136051653Z [err]          ^^^^
+2025-11-03T08:24:07.136055799Z [err]      ...<46 lines>...
+2025-11-03T08:24:07.136059913Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T08:24:07.136063554Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:07.136067166Z [err]      )
+2025-11-03T08:24:07.136070871Z [err]      ^
+2025-11-03T08:24:07.140395324Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T08:24:07.140402234Z [err]      server.run()
+2025-11-03T08:24:07.140406975Z [err]      ~~~~~~~~~~^^
+2025-11-03T08:24:07.140413809Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T08:24:07.140417695Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T08:24:07.140421534Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T08:24:07.140426039Z [err]      return runner.run(main)
+2025-11-03T08:24:07.140432212Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T08:24:07.140437888Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T08:24:07.140443651Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T08:24:07.140449688Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T08:24:07.140455804Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T08:24:07.140461495Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T08:24:07.140467888Z [err]      await self._serve(sockets)
+2025-11-03T08:24:07.140473897Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T08:24:07.140479538Z [err]      config.load()
+2025-11-03T08:24:07.140485800Z [err]      ~~~~~~~~~~~^^
+2025-11-03T08:24:07.140491407Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T08:24:07.140497546Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T08:24:07.140503466Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T08:24:07.140508471Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T08:24:07.143620994Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T08:24:07.143633315Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T08:24:07.143641381Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T08:24:07.143648184Z [err]      from ..database import get_session
+2025-11-03T08:24:07.143655296Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T08:24:07.143670195Z [err]      module = importlib.import_module(module_str)
+2025-11-03T08:24:07.143721876Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T08:24:07.143732222Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T08:24:07.143738876Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:07.143744530Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T08:24:07.143749469Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T08:24:07.143754379Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T08:24:07.143760778Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T08:24:07.143766450Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T08:24:07.143772238Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T08:24:10.923736883Z [err]  Traceback (most recent call last):
+2025-11-03T08:24:10.923741721Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T08:24:10.923746260Z [err]      sys.exit(main())
+2025-11-03T08:24:10.923751234Z [err]               ~~~~^^
+2025-11-03T08:24:10.923755430Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T08:24:10.923759535Z [err]      return self.main(*args, **kwargs)
+2025-11-03T08:24:10.923763157Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:10.923767494Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T08:24:10.923773034Z [err]      rv = self.invoke(ctx)
+2025-11-03T08:24:10.923777811Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T08:24:10.923782453Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T08:24:10.923786941Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:10.923791183Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T08:24:10.923795476Z [err]      return callback(*args, **kwargs)
+2025-11-03T08:24:10.923799719Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T08:24:10.923806395Z [err]      run(
+2025-11-03T08:24:10.923813297Z [err]      ~~~^
+2025-11-03T08:24:10.923819030Z [err]          app,
+2025-11-03T08:24:10.923825267Z [err]          ^^^^
+2025-11-03T08:24:10.923831171Z [err]      ...<46 lines>...
+2025-11-03T08:24:10.923836816Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T08:24:10.923842603Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:10.923849810Z [err]      )
+2025-11-03T08:24:10.923856109Z [err]      ^
+2025-11-03T08:24:10.923965154Z [err]      module = importlib.import_module(module_str)
+2025-11-03T08:24:10.923969639Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T08:24:10.923973990Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T08:24:10.923978665Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:10.923983537Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T08:24:10.923988689Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T08:24:10.923993541Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T08:24:10.923998018Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T08:24:10.924002797Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T08:24:10.924008656Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T08:24:10.924014386Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T08:24:10.924018516Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T08:24:10.924024397Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T08:24:10.924024475Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T08:24:10.924029573Z [err]      from ..database import get_session
+2025-11-03T08:24:10.924031598Z [err]      server.run()
+2025-11-03T08:24:10.924034783Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T08:24:10.924038298Z [err]      ~~~~~~~~~~^^
+2025-11-03T08:24:10.924043604Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T08:24:10.924048973Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T08:24:10.924053541Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T08:24:10.924057772Z [err]      return runner.run(main)
+2025-11-03T08:24:10.924062374Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T08:24:10.924066610Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T08:24:10.924071836Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T08:24:10.924076134Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T08:24:10.924088274Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T08:24:10.924093078Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T08:24:10.924098143Z [err]      await self._serve(sockets)
+2025-11-03T08:24:10.924103399Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T08:24:10.924107778Z [err]      config.load()
+2025-11-03T08:24:10.924112819Z [err]      ~~~~~~~~~~~^^
+2025-11-03T08:24:10.924116948Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T08:24:10.924121618Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T08:24:10.924125512Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T08:24:10.924130246Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T08:24:14.064886644Z [err]  Traceback (most recent call last):
+2025-11-03T08:24:14.064892615Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T08:24:14.064897026Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T08:24:14.064904131Z [err]      sys.exit(main())
+2025-11-03T08:24:14.064905798Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:14.064912964Z [err]      )
+2025-11-03T08:24:14.064913381Z [err]               ~~~~^^
+2025-11-03T08:24:14.064919192Z [err]      ^
+2025-11-03T08:24:14.064921528Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T08:24:14.064930140Z [err]      return self.main(*args, **kwargs)
+2025-11-03T08:24:14.064936307Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:14.064944855Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T08:24:14.064950589Z [err]      rv = self.invoke(ctx)
+2025-11-03T08:24:14.064956879Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T08:24:14.064962433Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T08:24:14.064968270Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:14.064974306Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T08:24:14.064979587Z [err]      return callback(*args, **kwargs)
+2025-11-03T08:24:14.064986733Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T08:24:14.064993328Z [err]      run(
+2025-11-03T08:24:14.064998658Z [err]      ~~~^
+2025-11-03T08:24:14.065003893Z [err]          app,
+2025-11-03T08:24:14.065009738Z [err]          ^^^^
+2025-11-03T08:24:14.065015814Z [err]      ...<46 lines>...
+2025-11-03T08:24:14.066723477Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T08:24:14.066738844Z [err]      server.run()
+2025-11-03T08:24:14.066748123Z [err]      ~~~~~~~~~~^^
+2025-11-03T08:24:14.066756439Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T08:24:14.066762628Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T08:24:14.066768914Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T08:24:14.066774600Z [err]      return runner.run(main)
+2025-11-03T08:24:14.066780851Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T08:24:14.066786807Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T08:24:14.066793019Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T08:24:14.066799636Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T08:24:14.066806028Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T08:24:14.066812019Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T08:24:14.066818082Z [err]      await self._serve(sockets)
+2025-11-03T08:24:14.066824582Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T08:24:14.066831531Z [err]      config.load()
+2025-11-03T08:24:14.066837886Z [err]      ~~~~~~~~~~~^^
+2025-11-03T08:24:14.066843841Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T08:24:14.066848406Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T08:24:14.066852810Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T08:24:14.066857866Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T08:24:14.068426404Z [err]      from ..database import get_session
+2025-11-03T08:24:14.068433427Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T08:24:14.068441617Z [err]      module = importlib.import_module(module_str)
+2025-11-03T08:24:14.068449059Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T08:24:14.068455701Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T08:24:14.068458575Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:14.068470626Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T08:24:14.068478107Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T08:24:14.068487546Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T08:24:14.068494488Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T08:24:14.068501775Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T08:24:14.068508292Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T08:24:14.068514781Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T08:24:14.068524544Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T08:24:14.068530767Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T08:24:17.210310651Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:17.210320500Z [err]      )
+2025-11-03T08:24:17.210327995Z [err]      ^
+2025-11-03T08:24:17.210368779Z [err]  Traceback (most recent call last):
+2025-11-03T08:24:17.210379897Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T08:24:17.210385917Z [err]      sys.exit(main())
+2025-11-03T08:24:17.210392676Z [err]               ~~~~^^
+2025-11-03T08:24:17.210397980Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T08:24:17.210403488Z [err]      return self.main(*args, **kwargs)
+2025-11-03T08:24:17.210408759Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:17.210414135Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T08:24:17.210418829Z [err]      rv = self.invoke(ctx)
+2025-11-03T08:24:17.210424594Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T08:24:17.210429144Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T08:24:17.210433478Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:17.210439419Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T08:24:17.210445346Z [err]      return callback(*args, **kwargs)
+2025-11-03T08:24:17.210451442Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T08:24:17.210457484Z [err]      run(
+2025-11-03T08:24:17.210463540Z [err]      ~~~^
+2025-11-03T08:24:17.210471083Z [err]          app,
+2025-11-03T08:24:17.210477057Z [err]          ^^^^
+2025-11-03T08:24:17.210483557Z [err]      ...<46 lines>...
+2025-11-03T08:24:17.210491035Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T08:24:17.212172786Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T08:24:17.212187666Z [err]      await self._serve(sockets)
+2025-11-03T08:24:17.212202443Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T08:24:17.212210066Z [err]      config.load()
+2025-11-03T08:24:17.212217368Z [err]      ~~~~~~~~~~~^^
+2025-11-03T08:24:17.212225079Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T08:24:17.212232654Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T08:24:17.212240374Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T08:24:17.212247488Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T08:24:17.212262301Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T08:24:17.212272402Z [err]      server.run()
+2025-11-03T08:24:17.212282637Z [err]      ~~~~~~~~~~^^
+2025-11-03T08:24:17.212292290Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T08:24:17.212299939Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T08:24:17.212308355Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T08:24:17.212315554Z [err]      return runner.run(main)
+2025-11-03T08:24:17.212322239Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T08:24:17.212331826Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T08:24:17.212340131Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T08:24:17.212349475Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T08:24:17.212356602Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T08:24:17.213450558Z [err]      module = importlib.import_module(module_str)
+2025-11-03T08:24:17.213462156Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T08:24:17.213469860Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T08:24:17.213538276Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T08:24:17.213547049Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T08:24:17.213554687Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T08:24:17.213562382Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T08:24:17.213573195Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T08:24:17.213584521Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T08:24:17.213593897Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T08:24:17.213603286Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T08:24:17.213612090Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T08:24:17.213619935Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T08:24:17.213627976Z [err]      from ..database import get_session
+2025-11-03T08:24:17.213636050Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:36:26.981832601Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:36:26.981843800Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:36:26.981851853Z [err]      run(
+2025-11-03T09:36:26.981857659Z [err]      ~~~^
+2025-11-03T09:36:26.981864166Z [err]          app,
+2025-11-03T09:36:26.981870046Z [err]          ^^^^
+2025-11-03T09:36:26.981875147Z [err]      ...<46 lines>...
+2025-11-03T09:36:26.981882307Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:36:26.981888246Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:26.981894312Z [err]      )
+2025-11-03T09:36:26.981900992Z [err]      ^
+2025-11-03T09:36:26.981905022Z [err]  Traceback (most recent call last):
+2025-11-03T09:36:26.981911093Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:36:26.981917645Z [err]      sys.exit(main())
+2025-11-03T09:36:26.981923947Z [err]               ~~~~^^
+2025-11-03T09:36:26.981929923Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:36:26.981935673Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:36:26.981941696Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:26.981948417Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:36:26.981953430Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:36:26.981957321Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:36:26.981961864Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:36:26.981967016Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:26.981973070Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:36:26.985061825Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:36:26.985071503Z [err]      config.load()
+2025-11-03T09:36:26.985078494Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:36:26.985085656Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:36:26.985091871Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:36:26.985098991Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:36:26.985107548Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:36:26.985108690Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:36:26.985115554Z [err]      server.run()
+2025-11-03T09:36:26.985120596Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:36:26.985126343Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:36:26.985134634Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:36:26.985140070Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:36:26.985147914Z [err]      return runner.run(main)
+2025-11-03T09:36:26.985154051Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:36:26.985159743Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:36:26.985164836Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:36:26.985170484Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:36:26.985175377Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:36:26.985180852Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:36:26.985186274Z [err]      await self._serve(sockets)
+2025-11-03T09:36:26.986513489Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:36:26.986554771Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:36:26.986558753Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:36:26.986562761Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:36:26.986566437Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:26.986578582Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:36:26.986582504Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:36:26.986586049Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:36:26.986589526Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:36:26.986593561Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:36:26.986597380Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:36:26.986601256Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:36:26.986607572Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:36:26.986611549Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:36:26.986615060Z [err]      from ..database import get_session
+2025-11-03T09:36:30.262200900Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:36:30.262207950Z [err]  Traceback (most recent call last):
+2025-11-03T09:36:30.262213757Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:36:30.262217196Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:36:30.262220955Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:30.262227241Z [err]      sys.exit(main())
+2025-11-03T09:36:30.262228648Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:36:30.262234798Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:36:30.262235730Z [err]               ~~~~^^
+2025-11-03T09:36:30.262241007Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:36:30.262245041Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:36:30.262247538Z [err]      run(
+2025-11-03T09:36:30.262254007Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:36:30.262254108Z [err]      ~~~^
+2025-11-03T09:36:30.262263596Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:30.262263713Z [err]          app,
+2025-11-03T09:36:30.262270765Z [err]          ^^^^
+2025-11-03T09:36:30.262273258Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:36:30.262276764Z [err]      ...<46 lines>...
+2025-11-03T09:36:30.262283253Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:36:30.262284081Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:36:30.262289732Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:30.262294083Z [err]      )
+2025-11-03T09:36:30.262298554Z [err]      ^
+2025-11-03T09:36:30.265990865Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:36:30.265997998Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:36:30.266008353Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:36:30.266012859Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:36:30.266016261Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:36:30.266020176Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:36:30.266024438Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:36:30.266028162Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:36:30.266033442Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:36:30.266034984Z [err]      from ..database import get_session
+2025-11-03T09:36:30.266039912Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:36:30.266043100Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:30.266050194Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:36:30.266053481Z [err]      server.run()
+2025-11-03T09:36:30.266057545Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:36:30.266063879Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:36:30.266065003Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:36:30.266073112Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:36:30.266073292Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:36:30.266081955Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:36:30.266082396Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:36:30.266089733Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:36:30.266091034Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:36:30.266103755Z [err]      return runner.run(main)
+2025-11-03T09:36:30.266111075Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:36:30.266118087Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:36:30.266125677Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:36:30.266132815Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:36:30.266140254Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:36:30.266154639Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:36:30.266162417Z [err]      await self._serve(sockets)
+2025-11-03T09:36:30.266169567Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:36:30.266175700Z [err]      config.load()
+2025-11-03T09:36:30.266182790Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:36:30.266190084Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:36:30.266196377Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:36:34.316738252Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:36:34.316739591Z [err]      ^
+2025-11-03T09:36:34.316751549Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:36:34.316759814Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:34.316766960Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:36:34.316774278Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:36:34.316781893Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:36:34.316790036Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:36:34.316796537Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:34.316803163Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:36:34.316810460Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:36:34.316817362Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:36:34.316823906Z [err]      run(
+2025-11-03T09:36:34.316830948Z [err]      ~~~^
+2025-11-03T09:36:34.316838134Z [err]          app,
+2025-11-03T09:36:34.316845794Z [err]          ^^^^
+2025-11-03T09:36:34.316853104Z [err]      ...<46 lines>...
+2025-11-03T09:36:34.316860416Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:36:34.316867671Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:34.316873605Z [err]      )
+2025-11-03T09:36:34.316982767Z [err]  Traceback (most recent call last):
+2025-11-03T09:36:34.316987986Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:36:34.316993265Z [err]      sys.exit(main())
+2025-11-03T09:36:34.316998873Z [err]               ~~~~^^
+2025-11-03T09:36:34.319051104Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:36:34.319051799Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:36:34.319067816Z [err]      server.run()
+2025-11-03T09:36:34.319069397Z [err]      await self._serve(sockets)
+2025-11-03T09:36:34.319078030Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:36:34.319081258Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:36:34.319090688Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:36:34.319090908Z [err]      config.load()
+2025-11-03T09:36:34.319102241Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:36:34.319107207Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:36:34.319112579Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:36:34.319124022Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:36:34.319128851Z [err]      return runner.run(main)
+2025-11-03T09:36:34.319137240Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:36:34.319140831Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:36:34.319148319Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:36:34.319156127Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:36:34.319160129Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:36:34.319167083Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:36:34.319177605Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:36:34.319184850Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:36:34.321202793Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:36:34.321215443Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:36:34.321220402Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:36:34.321224065Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:36:34.321234751Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:36:34.321235908Z [err]      from ..database import get_session
+2025-11-03T09:36:34.321247911Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:36:34.321250473Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:36:34.321257387Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:34.321264261Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:36:34.321270729Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:36:34.321278771Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:36:34.321284058Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:36:34.321290345Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:36:34.321296366Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:36:37.895136815Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:36:37.895151199Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:37.895153212Z [err]               ~~~~^^
+2025-11-03T09:36:37.895159814Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:36:37.895166388Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:36:37.895169010Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:36:37.895174609Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:36:37.895179082Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:36:37.895185015Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:37.895191377Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:36:37.895198487Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:36:37.895204881Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:36:37.895207441Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:36:37.895213065Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:37.895222469Z [err]      )
+2025-11-03T09:36:37.895231424Z [err]      ^
+2025-11-03T09:36:37.895239797Z [err]  Traceback (most recent call last):
+2025-11-03T09:36:37.895245789Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:36:37.895251961Z [err]      sys.exit(main())
+2025-11-03T09:36:37.895253477Z [err]      run(
+2025-11-03T09:36:37.895266094Z [err]      ~~~^
+2025-11-03T09:36:37.895275494Z [err]          app,
+2025-11-03T09:36:37.895282541Z [err]          ^^^^
+2025-11-03T09:36:37.895288151Z [err]      ...<46 lines>...
+2025-11-03T09:36:37.897864892Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:36:37.897873343Z [err]      server.run()
+2025-11-03T09:36:37.897878720Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:36:37.897883707Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:36:37.897888260Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:36:37.897893377Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:36:37.897898213Z [err]      return runner.run(main)
+2025-11-03T09:36:37.897904101Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:36:37.897908976Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:36:37.897913840Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:36:37.897919472Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:36:37.897925186Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:36:37.897930100Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:36:37.897936968Z [err]      await self._serve(sockets)
+2025-11-03T09:36:37.897941296Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:36:37.897948057Z [err]      config.load()
+2025-11-03T09:36:37.897952933Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:36:37.897958083Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:36:37.897965814Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:36:37.897970563Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:36:37.897975980Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:36:37.898120761Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:36:37.898126541Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:36:37.898133375Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:36:37.898139158Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:37.898145180Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:36:37.898152401Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:36:37.898163691Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:36:37.898170991Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:36:37.898178505Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:36:37.898186849Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:36:37.898193079Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:36:37.898199981Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:36:37.898206090Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:36:37.898212851Z [err]      from ..database import get_session
+2025-11-03T09:36:37.898219022Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:36:41.107241367Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:36:41.107253248Z [err]      server.run()
+2025-11-03T09:36:41.107258877Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:36:41.107262695Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:36:41.107269793Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:36:41.107294472Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:36:41.107302082Z [err]      return runner.run(main)
+2025-11-03T09:36:41.107309261Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:36:41.107315293Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:36:41.107329857Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:36:41.107332641Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:36:41.107335105Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:36:41.107341149Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:36:41.107368286Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:36:41.107376322Z [err]      await self._serve(sockets)
+2025-11-03T09:36:41.107376478Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:36:41.107394169Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:36:41.107405086Z [err]      config.load()
+2025-11-03T09:36:41.107410135Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:36:41.107416805Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:36:41.107435148Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:36:41.107530359Z [err]  Traceback (most recent call last):
+2025-11-03T09:36:41.107536412Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:36:41.107543153Z [err]      sys.exit(main())
+2025-11-03T09:36:41.107549795Z [err]               ~~~~^^
+2025-11-03T09:36:41.107558740Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:36:41.107565703Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:36:41.107571994Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:41.107581860Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:36:41.107582048Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:36:41.107590576Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:36:41.107590773Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:36:41.107598968Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:36:41.107599911Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:36:41.107607241Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:41.107607588Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:36:41.107614965Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:41.107616619Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:36:41.107622984Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:36:41.107625471Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:36:41.107633093Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:36:41.107639997Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:36:41.107645905Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:36:41.107652119Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:36:41.107658954Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:36:41.107666075Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:36:41.107672578Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:36:41.107678067Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:36:41.107682496Z [err]      from ..database import get_session
+2025-11-03T09:36:41.107689348Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:36:41.107691916Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:36:41.107696897Z [err]      run(
+2025-11-03T09:36:41.107703409Z [err]      ~~~^
+2025-11-03T09:36:41.107710624Z [err]          app,
+2025-11-03T09:36:41.107718255Z [err]          ^^^^
+2025-11-03T09:36:41.107725161Z [err]      ...<46 lines>...
+2025-11-03T09:36:41.107731405Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:36:41.107740855Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:41.107746851Z [err]      )
+2025-11-03T09:36:41.107752949Z [err]      ^
+2025-11-03T09:36:44.020480207Z [err]      ^
+2025-11-03T09:36:44.020493201Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:36:44.020506247Z [err]      sys.exit(main())
+2025-11-03T09:36:44.020515947Z [err]               ~~~~^^
+2025-11-03T09:36:44.020523348Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:36:44.020530163Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:36:44.020538387Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:44.020546432Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:36:44.020549632Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:36:44.020552301Z [err]  Traceback (most recent call last):
+2025-11-03T09:36:44.020555413Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:36:44.020562111Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:36:44.020563447Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:36:44.020568542Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:36:44.020570577Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:36:44.020574654Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:44.020577059Z [err]      run(
+2025-11-03T09:36:44.020583473Z [err]      ~~~^
+2025-11-03T09:36:44.020590241Z [err]          app,
+2025-11-03T09:36:44.020597947Z [err]          ^^^^
+2025-11-03T09:36:44.020604049Z [err]      ...<46 lines>...
+2025-11-03T09:36:44.020610743Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:36:44.020617104Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:44.020624682Z [err]      )
+2025-11-03T09:36:44.027177797Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:36:44.027187799Z [err]      server.run()
+2025-11-03T09:36:44.027195266Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:36:44.027202562Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:36:44.027210802Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:36:44.027217599Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:36:44.027224465Z [err]      return runner.run(main)
+2025-11-03T09:36:44.027230820Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:36:44.027236521Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:36:44.027242245Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:36:44.027247653Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:36:44.027252930Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:36:44.027266542Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:36:44.027272870Z [err]      await self._serve(sockets)
+2025-11-03T09:36:44.027280192Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:36:44.027286827Z [err]      config.load()
+2025-11-03T09:36:44.027293835Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:36:44.027299896Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:36:44.027306618Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:36:44.027312849Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:36:44.027318815Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:36:44.027526751Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:36:44.027532622Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:36:44.027538622Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:36:44.027544511Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:44.027550497Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:36:44.027556743Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:36:44.027562836Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:36:44.027569123Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:36:44.027575200Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:36:44.027580967Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:36:44.027587087Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:36:44.027593083Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:36:44.027598937Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:36:44.027604851Z [err]      from ..database import get_session
+2025-11-03T09:36:44.027612038Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:36:47.296696808Z [err]  Traceback (most recent call last):
+2025-11-03T09:36:47.296700892Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:36:47.296708268Z [err]      sys.exit(main())
+2025-11-03T09:36:47.296712220Z [err]               ~~~~^^
+2025-11-03T09:36:47.296717377Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:36:47.296721416Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:36:47.296725222Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:47.296729305Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:36:47.296733773Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:36:47.296738207Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:36:47.296742434Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:36:47.296746653Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:47.296751474Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:36:47.296755367Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:36:47.296761325Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:36:47.296766218Z [err]      run(
+2025-11-03T09:36:47.296770331Z [err]      ~~~^
+2025-11-03T09:36:47.296774338Z [err]          app,
+2025-11-03T09:36:47.296778161Z [err]          ^^^^
+2025-11-03T09:36:47.296782343Z [err]      ...<46 lines>...
+2025-11-03T09:36:47.296787151Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:36:47.296793160Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:47.296797402Z [err]      )
+2025-11-03T09:36:47.296801207Z [err]      ^
+2025-11-03T09:36:47.301036218Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:36:47.301049696Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:36:47.301056682Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:36:47.301058018Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:36:47.301062697Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:36:47.301066918Z [err]      server.run()
+2025-11-03T09:36:47.301070974Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:36:47.301091225Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:36:47.301109387Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:36:47.301122610Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:36:47.301131556Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:36:47.301139091Z [err]      return runner.run(main)
+2025-11-03T09:36:47.301148050Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:36:47.301155120Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:36:47.301161805Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:36:47.301167973Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:36:47.301174641Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:36:47.301182567Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:36:47.301189597Z [err]      await self._serve(sockets)
+2025-11-03T09:36:47.301195337Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:36:47.301203543Z [err]      config.load()
+2025-11-03T09:36:47.302712442Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:36:47.302724653Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:36:47.302736643Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:36:47.302748216Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:47.302755655Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:36:47.302764243Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:36:47.302771370Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:36:47.302778975Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:36:47.302785749Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:36:47.302792507Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:36:47.302798417Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:36:47.302804589Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:36:47.302810890Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:36:47.302816663Z [err]      from ..database import get_session
+2025-11-03T09:36:47.302829830Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:36:50.236143470Z [err]  Traceback (most recent call last):
+2025-11-03T09:36:50.236157635Z [err]      ~~~^
+2025-11-03T09:36:50.236160139Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:36:50.236169496Z [err]      sys.exit(main())
+2025-11-03T09:36:50.236178743Z [err]          app,
+2025-11-03T09:36:50.236183180Z [err]               ~~~~^^
+2025-11-03T09:36:50.236192768Z [err]          ^^^^
+2025-11-03T09:36:50.236196754Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:36:50.236207138Z [err]      ...<46 lines>...
+2025-11-03T09:36:50.236208716Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:36:50.236221584Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:36:50.236222750Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:50.236234261Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:36:50.236242473Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:50.236249506Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:36:50.236256545Z [err]      )
+2025-11-03T09:36:50.236262748Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:36:50.236298511Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:36:50.236302738Z [err]      ^
+2025-11-03T09:36:50.236309913Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:50.236317739Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:36:50.236324211Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:36:50.236331758Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:36:50.236338690Z [err]      run(
+2025-11-03T09:36:50.238283064Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:36:50.238295828Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:36:50.238303632Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:36:50.238353905Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:36:50.238360243Z [err]      server.run()
+2025-11-03T09:36:50.238390659Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:36:50.238395657Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:36:50.238403409Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:36:50.238409857Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:36:50.238431660Z [err]      return runner.run(main)
+2025-11-03T09:36:50.238436249Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:36:50.238441723Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:36:50.238447837Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:36:50.238453438Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:36:50.238459150Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:36:50.238463362Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:36:50.238467566Z [err]      await self._serve(sockets)
+2025-11-03T09:36:50.238472166Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:36:50.238477335Z [err]      config.load()
+2025-11-03T09:36:50.238494347Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:36:50.238498734Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:36:50.241318315Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:36:50.241321603Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:36:50.241328295Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:36:50.241330343Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:36:50.241337328Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:36:50.241339428Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:36:50.241344840Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:50.241350795Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:36:50.241357233Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:36:50.241361063Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:36:50.241365056Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:36:50.241367764Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:36:50.241372107Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:36:50.241391824Z [err]      from ..database import get_session
+2025-11-03T09:36:50.241396817Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:36:54.216716947Z [err]  Traceback (most recent call last):
+2025-11-03T09:36:54.216721238Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:36:54.216725796Z [err]      sys.exit(main())
+2025-11-03T09:36:54.216730358Z [err]               ~~~~^^
+2025-11-03T09:36:54.216734466Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:36:54.216738986Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:36:54.216743307Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:54.216747937Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:36:54.216751738Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:36:54.216755742Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:36:54.216759907Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:36:54.216765343Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:54.216769591Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:36:54.216774044Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:36:54.216778526Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:36:54.216782648Z [err]      run(
+2025-11-03T09:36:54.216786904Z [err]      ~~~^
+2025-11-03T09:36:54.216791073Z [err]          app,
+2025-11-03T09:36:54.216794812Z [err]          ^^^^
+2025-11-03T09:36:54.216799753Z [err]      ...<46 lines>...
+2025-11-03T09:36:54.216803813Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:36:54.216807892Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:54.216811896Z [err]      )
+2025-11-03T09:36:54.216816855Z [err]      ^
+2025-11-03T09:36:54.221368979Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:36:54.221379321Z [err]      server.run()
+2025-11-03T09:36:54.221384687Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:36:54.221390268Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:36:54.221395471Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:36:54.221400703Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:36:54.221407229Z [err]      return runner.run(main)
+2025-11-03T09:36:54.221412663Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:36:54.221419038Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:36:54.221424361Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:36:54.221429660Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:36:54.221436007Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:36:54.221441232Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:36:54.221447032Z [err]      await self._serve(sockets)
+2025-11-03T09:36:54.221454108Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:36:54.221459228Z [err]      config.load()
+2025-11-03T09:36:54.221464190Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:36:54.221489862Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:36:54.221499091Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:36:54.221505638Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:36:54.221512375Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:36:54.221696361Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:36:54.221700911Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:36:54.221704897Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:36:54.221709481Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:54.221713612Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:36:54.221718794Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:36:54.221723646Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:36:54.221729709Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:36:54.221734203Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:36:54.221738761Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:36:54.221742732Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:36:54.221746921Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:36:54.221752224Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:36:54.222208051Z [err]      from ..database import get_session
+2025-11-03T09:36:54.222215448Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:36:57.372141907Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:57.372148481Z [err]  Traceback (most recent call last):
+2025-11-03T09:36:57.372158640Z [err]      )
+2025-11-03T09:36:57.372160956Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:36:57.372170263Z [err]      ^
+2025-11-03T09:36:57.372171864Z [err]      sys.exit(main())
+2025-11-03T09:36:57.372178926Z [err]               ~~~~^^
+2025-11-03T09:36:57.372185205Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:36:57.372192127Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:36:57.372198390Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:57.372205697Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:36:57.372210733Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:36:57.372215899Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:36:57.372222731Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:36:57.372228829Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:57.372234919Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:36:57.372242637Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:36:57.372249527Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:36:57.372257008Z [err]      run(
+2025-11-03T09:36:57.372264109Z [err]      ~~~^
+2025-11-03T09:36:57.372272223Z [err]          app,
+2025-11-03T09:36:57.372318498Z [err]          ^^^^
+2025-11-03T09:36:57.372327027Z [err]      ...<46 lines>...
+2025-11-03T09:36:57.372335018Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:36:57.372962951Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:36:57.372970450Z [err]      server.run()
+2025-11-03T09:36:57.372976350Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:36:57.372982091Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:36:57.372987894Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:36:57.372993309Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:36:57.372998935Z [err]      return runner.run(main)
+2025-11-03T09:36:57.373004695Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:36:57.373010344Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:36:57.373016918Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:36:57.373022250Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:36:57.373027955Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:36:57.373034035Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:36:57.373040056Z [err]      await self._serve(sockets)
+2025-11-03T09:36:57.373045246Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:36:57.373050785Z [err]      config.load()
+2025-11-03T09:36:57.373056469Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:36:57.373061715Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:36:57.373066842Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:36:57.373071892Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:36:57.373076958Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:36:57.373764495Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:36:57.373769177Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:36:57.373773281Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:36:57.373777027Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:36:57.373781123Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:36:57.373785019Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:36:57.373788988Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:36:57.373792668Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:36:57.373797452Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:36:57.373801025Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:36:57.373805215Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:36:57.373808805Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:36:57.373812759Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:36:57.373817866Z [err]      from ..database import get_session
+2025-11-03T09:36:57.373821592Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
+2025-11-03T09:37:04.466928690Z [err]      return ctx.invoke(self.callback, **ctx.params)
+2025-11-03T09:37:04.466933850Z [err]      )
+2025-11-03T09:37:04.466938890Z [err]             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:37:04.466945553Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+2025-11-03T09:37:04.466948255Z [err]      ^
+2025-11-03T09:37:04.466952760Z [err]      return callback(*args, **kwargs)
+2025-11-03T09:37:04.466958408Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+2025-11-03T09:37:04.466963363Z [err]      run(
+2025-11-03T09:37:04.466968639Z [err]      ~~~^
+2025-11-03T09:37:04.466973708Z [err]          app,
+2025-11-03T09:37:04.466978807Z [err]          ^^^^
+2025-11-03T09:37:04.466984167Z [err]      ...<46 lines>...
+2025-11-03T09:37:04.466989215Z [err]          h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+2025-11-03T09:37:04.466994790Z [err]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:37:04.467000250Z [err]  Traceback (most recent call last):
+2025-11-03T09:37:04.467007984Z [err]    File "/app/.venv/bin/uvicorn", line 7, in <module>
+2025-11-03T09:37:04.467015294Z [err]      sys.exit(main())
+2025-11-03T09:37:04.467022698Z [err]               ~~~~^^
+2025-11-03T09:37:04.467030966Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+2025-11-03T09:37:04.467039428Z [err]      return self.main(*args, **kwargs)
+2025-11-03T09:37:04.467047512Z [err]             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+2025-11-03T09:37:04.467055360Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+2025-11-03T09:37:04.467062900Z [err]      rv = self.invoke(ctx)
+2025-11-03T09:37:04.467070585Z [err]    File "/app/.venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+2025-11-03T09:37:04.469990298Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 118, in run
+2025-11-03T09:37:04.469999703Z [err]      config.load()
+2025-11-03T09:37:04.469999759Z [err]      return self._loop.run_until_complete(task)
+2025-11-03T09:37:04.470006366Z [err]             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2025-11-03T09:37:04.470013757Z [err]    File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-11-03T09:37:04.470014673Z [err]      ~~~~~~~~~~~^^
+2025-11-03T09:37:04.470021169Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+2025-11-03T09:37:04.470028707Z [err]      await self._serve(sockets)
+2025-11-03T09:37:04.470030403Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+2025-11-03T09:37:04.470035881Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+2025-11-03T09:37:04.470039738Z [err]      self.loaded_app = import_from_string(self.app)
+2025-11-03T09:37:04.470045245Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+2025-11-03T09:37:04.470049624Z [err]                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2025-11-03T09:37:04.470052949Z [err]      server.run()
+2025-11-03T09:37:04.470058594Z [err]      ~~~~~~~~~~^^
+2025-11-03T09:37:04.470060595Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+2025-11-03T09:37:04.470064555Z [err]    File "/app/.venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+2025-11-03T09:37:04.470069570Z [err]      return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2025-11-03T09:37:04.470074840Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/asyncio/runners.py", line 195, in run
+2025-11-03T09:37:04.470079617Z [err]      return runner.run(main)
+2025-11-03T09:37:04.470083913Z [err]             ~~~~~~~~~~^^^^^^
+2025-11-03T09:37:04.471921126Z [err]      module = importlib.import_module(module_str)
+2025-11-03T09:37:04.471927250Z [err]    File "/mise/installs/python/3.13.9/lib/python3.13/importlib/__init__.py", line 88, in import_module
+2025-11-03T09:37:04.471934179Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-11-03T09:37:04.471940052Z [err]             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-11-03T09:37:04.471944789Z [err]    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-11-03T09:37:04.471948853Z [err]    File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-11-03T09:37:04.471952856Z [err]    File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-11-03T09:37:04.471958025Z [err]    File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-11-03T09:37:04.471962882Z [err]    File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+2025-11-03T09:37:04.471967600Z [err]    File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-11-03T09:37:04.471971680Z [err]    File "/app/app/main.py", line 9, in <module>
+2025-11-03T09:37:04.471975269Z [err]      from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+2025-11-03T09:37:04.471979124Z [err]    File "/app/app/routes/menu_routes.py", line 4, in <module>
+2025-11-03T09:37:04.471983678Z [err]      from ..database import get_session
+2025-11-03T09:37:04.471987852Z [err]  ImportError: cannot import name 'get_session' from 'app.database' (/app/app/database.py)
