@@ -24,8 +24,6 @@ class Token(SQLModel):
 
 class TokenData(SQLModel):
     email: Optional[str] = None
-
-
 class CategoryRead(SQLModel):
     id: Optional[int]
     name: str

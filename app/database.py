@@ -37,6 +37,22 @@ def _create_engine(url: str):
         return create_engine(url, echo=False, pool_pre_ping=True, connect_args=connect_args)
     return create_engine(url, echo=False, pool_pre_ping=True)
 
+    # For managed Postgres (e.g., Railway public host), add sslmode=require.
+    # Internal host (postgres.railway.internal) generally does not require SSL.
+    connect_args = {}
+    try:
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        host = parsed.hostname or ""
+        if url.startswith("postgres") and "railway.internal" not in host:
+            connect_args = {"sslmode": "require"}
+    except Exception:
+        connect_args = {}
+
+    if connect_args:
+        return create_engine(url, echo=False, pool_pre_ping=True, connect_args=connect_args)
+    return create_engine(url, echo=False, pool_pre_ping=True)
+
 engine = None
 if DATABASE_URL:
     engine = _create_engine(DATABASE_URL)
