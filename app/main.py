@@ -54,9 +54,9 @@ def get_session():
     with Session(eng) as session:
         yield session
 
-@app.on_event("startup")
-def on_startup():
-    init_db()
+# @app.on_event("startup")
+# def on_startup():
+#     init_db()
 
 # CATEGORY
 @app.get("/api/categories", response_model=List[Category])
