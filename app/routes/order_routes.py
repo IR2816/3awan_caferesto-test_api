@@ -2,11 +2,13 @@ from fastapi import APIRouter, HTTPException
 from app.models import Order
 from app.schemas import OrderCreate, OrderUpdate
 from app.crud import create_order, get_order, update_order, delete_order
+from fastapi import Depends
+from app.utils.jwt import get_current_user
 
 router = APIRouter()
 
 @router.post("/orders", response_model=Order, status_code=201)
-def create_new_order(order: OrderCreate):
+def create_new_order(order: OrderCreate, current_user=Depends(get_current_user)):
     """Create a new order with items (validated)."""
     try:
         return create_order(order)
@@ -24,7 +26,7 @@ def read_order(order_id: int):
 
 
 @router.put("/orders/{order_id}", response_model=Order)
-def update_existing_order(order_id: int, order: OrderUpdate):
+def update_existing_order(order_id: int, order: OrderUpdate, current_user=Depends(get_current_user)):
     """Update fields on an existing order."""
     updated = update_order(order_id, order)
     if not updated:
@@ -33,7 +35,7 @@ def update_existing_order(order_id: int, order: OrderUpdate):
 
 
 @router.delete("/orders/{order_id}", status_code=204)
-def delete_existing_order(order_id: int):
+def delete_existing_order(order_id: int, current_user=Depends(get_current_user)):
     """Delete an order by id."""
     if not delete_order(order_id):
         raise HTTPException(status_code=404, detail="Order not found")
