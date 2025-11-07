@@ -2,6 +2,30 @@ from typing import Optional, List
 from sqlmodel import SQLModel, Field
 
 
+class UserCreate(SQLModel):
+    name: str
+    email: str
+    password: str
+    role: Optional[str] = "staff"
+
+
+class UserRead(SQLModel):
+    id: int
+    name: str
+    email: str
+    role: str
+    status: str
+
+
+class Token(SQLModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(SQLModel):
+    email: Optional[str] = None
+
+
 class CategoryRead(SQLModel):
     id: Optional[int]
     name: str
