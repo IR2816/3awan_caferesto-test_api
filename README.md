@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-# 3awan_caferesto-test_api
-=======
->>>>>>> d6ae61f (Initial commit: API with CRUD functionality)
 # 3awan Cafe & Resto API
 
 Backend REST API untuk aplikasi pemesanan menu restoran.
@@ -15,7 +9,7 @@ Backend REST API untuk aplikasi pemesanan menu restoran.
 
 ## Setup (Windows / PowerShell)
 
-1. Create virtualenv (if not present):
+1. Buat virtualenv dan install dependencies:
 
 ```powershell
 python -m venv venv
@@ -23,31 +17,33 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-2. Create `.env` in project root with DATABASE_URL (Postgres example):
+2. Buat file `.env` di root project dengan DATABASE_URL (contoh PostgreSQL):
 
 ```
 DATABASE_URL=postgresql://user:pass@host:port/dbname
 ```
 
+Catatan: Aplikasi juga mendukung `RAILWAY_DATABASE_URL` untuk deployment di Railway.
+
 ## Deploy
 Hosting: Railway  
 Database: PostgreSQL (Railway)
 
-3. Create DB tables and seed example data:
+3. Buat tabel dan seed data contoh (opsional):
 
 ```powershell
 & .\venv\Scripts\Activate.ps1
 python -c "from app.seed import seed; seed()"
 ```
 
-4. Run the app with uvicorn:
+4. Jalankan aplikasi dengan uvicorn:
 
 ```powershell
 & .\venv\Scripts\Activate.ps1
 & .\venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000
 ```
 
-API endpoints
+## API endpoints
 
 - GET /api/categories
 - GET /api/menus
@@ -57,10 +53,6 @@ API endpoints
 - DELETE /api/menus/{menu_id}
 - POST /api/orders
 
-Notes
-- The project uses `sqlmodel`. Keep `.env` secret — it contains DB credentials.
-- For production, configure proper logging and disable debug/echo settings.
-<<<<<<< HEAD
-=======
->>>>>>> bbd519c (Initial commit: API with CRUD functionality)
->>>>>>> d6ae61f (Initial commit: API with CRUD functionality)
+## Notes
+- Project menggunakan `sqlmodel`. Jangan commit `.env` — berisi kredensial DB.
+- Untuk production, siapkan logging dan nonaktifkan debug/echo settings.

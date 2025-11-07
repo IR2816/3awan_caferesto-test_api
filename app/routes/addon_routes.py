@@ -2,6 +2,8 @@ from fastapi import APIRouter, HTTPException
 from typing import List
 from app.schemas import AddonCreate, AddonRead, AddonUpdate
 from app.crud import get_addons_by_menu, create_addon, get_addon, update_addon, delete_addon
+from fastapi import Depends
+from app.utils.jwt import get_current_user
 
 router = APIRouter()
 
@@ -11,7 +13,7 @@ def list_addons(menu_id: int):
     return get_addons_by_menu(menu_id)
 
 @router.post("/menus/{menu_id}/addons", response_model=AddonRead, status_code=201)
-def create_menu_addon(menu_id: int, addon: AddonCreate):
+def create_menu_addon(menu_id: int, addon: AddonCreate, current_user=Depends(get_current_user)):
     """Create an addon for a menu."""
     try:
         return create_addon(menu_id, addon)
@@ -29,7 +31,7 @@ def read_addon(addon_id: int):
 
 
 @router.put("/addons/{addon_id}", response_model=AddonRead)
-def update_existing_addon(addon_id: int, addon: AddonUpdate):
+def update_existing_addon(addon_id: int, addon: AddonUpdate, current_user=Depends(get_current_user)):
     """Update fields on an existing addon."""
     updated = update_addon(addon_id, addon)
     if not updated:
@@ -38,7 +40,7 @@ def update_existing_addon(addon_id: int, addon: AddonUpdate):
 
 
 @router.delete("/addons/{addon_id}", status_code=204)
-def delete_existing_addon(addon_id: int):
+def delete_existing_addon(addon_id: int, current_user=Depends(get_current_user)):
     """Delete an addon by id."""
     if not delete_addon(addon_id):
         raise HTTPException(status_code=404, detail="Addon not found")
