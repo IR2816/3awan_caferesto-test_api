@@ -9,6 +9,7 @@ from .models import (
     MenuAddon,
     Customer,
     Payment,
+    User,
 )
 from .schemas import (
     MenuCreate,
@@ -23,9 +24,29 @@ from .schemas import (
     AddonUpdate,
     PaymentCreate,
     PaymentUpdate,
+    UserCreate,
 )
 
 from . import database
+from .utils.auth_utils import hash_password
+
+
+def get_user_by_email(db: Session, email: str) -> Optional[User]:
+    return db.exec(select(User).where(User.email == email)).first()
+
+
+def create_user(db: Session, user: UserCreate) -> User:
+    hashed_password = hash_password(user.password)
+    db_user = User(
+        name=user.name,
+        email=user.email,
+        password=hashed_password,
+        role=user.role,
+    )
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
 
 
 # CATEGORY

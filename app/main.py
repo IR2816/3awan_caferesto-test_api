@@ -6,14 +6,14 @@ from sqlmodel import Session
 from fastapi.middleware.cors import CORSMiddleware
 
 # Import routes
-from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes
+from .routes import menu_routes, category_routes, customer_routes, order_routes, addon_routes, payment_routes, auth
 
 app = FastAPI(title="3awan Cafe & Resto API")
 
 # Configure CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    # Use a regex so any localhost/127.0.0.1 origin (any port) is allowed.
+    # Use a regex so any localhost/12.0.0.1 origin (any port) is allowed.
     allow_origins=["*"],
     allow_credentials=False,
     allow_methods=["*"],
@@ -33,6 +33,7 @@ def get_session():
 #     init_db()
 
 # Include routers with prefix
+app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
 app.include_router(category_routes.router, prefix="/api")
 app.include_router(menu_routes.router, prefix="/api")
 

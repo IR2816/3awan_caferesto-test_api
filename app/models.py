@@ -53,6 +53,8 @@ class User(SQLModel, table=True):
     password: str
     role: str = "staff"
     created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: Optional[datetime] = Field(default_factory=datetime.utcnow, sa_column_kwargs={"onupdate": datetime.utcnow})
+    status: str = Field(default="active")
 
 
 class Discount(SQLModel, table=True):
