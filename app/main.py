@@ -28,9 +28,9 @@ def get_session():
     with Session(eng) as session:
         yield session
 
-@app.on_event("startup")
-def on_startup():
-    init_db()
+# @app.on_event("startup")
+# def on_startup():
+#     init_db()
 
 # Include routers with prefix
 app.include_router(category_routes.router, prefix="/api")
