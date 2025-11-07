@@ -41,7 +41,7 @@ app.add_middleware(
     CORSMiddleware,
     # Use a regex so any localhost/127.0.0.1 origin (any port) is allowed.
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
