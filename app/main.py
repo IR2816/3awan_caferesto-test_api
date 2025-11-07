@@ -14,9 +14,8 @@ app = FastAPI(title="3awan Cafe & Resto API")
 app.add_middleware(
     CORSMiddleware,
     # Use a regex so any localhost/127.0.0.1 origin (any port) is allowed.
-    allow_origins=[],
-    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$",
-    allow_credentials=False,  # keep False when allowing wildcard-like origins
+    allow_origins=["*"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
